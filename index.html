@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Deformation-Compensated Learning for Image Reconstruction without Ground Truth">
+    <meta name="author" content="Shirin Shoushtari,
+    Jiaming Liu,
+    Yuyang Hu,
+    Ulugbek S. Kamilov">
+
+    <title>Deep Model-Based Architectures for Inverse Problems under Mismatched Priors</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+
+<!--    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Deep Model-Based Architectures for Inverse Problems under Mismatched Priors</h2> <h2></h2>
+    <h3></h3> <!--IEEE Journal on Selected Areas on Information Theory, 2022</h3>-->
+            <p class="abstract"><b>New Insights into Learning-Based Image Reconstruction under Distribution Shifts</b></p>
+    <hr>
+    <p class="authors">
+        <a href="https://shirinsg.github.io"> Shirin Shoushtari</a>,
+        <a href="https://jiamingliu-jeremy.github.io"> Jiaming Liu</a>,
+        <a href="https://scholar.google.co.nz/citations?user=FvRrgTsAAAAJ&hl=en">Yuyang Hu</a>, 
+        <a href="https://twitter.com/ukmlv"> Ulugbek S. Kamilov</a> </br>
+        <b><a href="https://cigroup.wustl.edu/"> Computational Imaging Group (CIG)</a></b>
+    </p>
+
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <!--<a class="btn btn-primary" href="https://ieeexplore.ieee.org/document/9743932">Paper (journal)</a> -->
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2207.13200">Paper (arxiv)</a>
+        <!--  <a class="btn btn-primary" href="https://github.com/wustl-cig/DeCoLearn">GitHub</a> -->
+    </div>
+
+    
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <div class="row align-items-center">
+			<div class="col justify-content-center text-center">
+                <img src="img/v1.gif" style="width:100%" alt="Banner">
+                <p><b>Figure 1: </b>Evolution of MRI image reconstruction under a true and mismatched CNN prior, trained on MRI and natural images, respectively. The numbers on the top-left corner of the images are the SNR (dB) and SSIM values.</p>
+            </div>
+        </div>
+
+
+        <!-- <video width="100%" height="400" controls="True" preload="none" loop muted autoplay = 'autoplay' playsInline>
+            <source type="video/mp4" src="img/Presentation1.mov" />
+            <source type="video/webm" src="img/video1.webm" />
+        </video> -->
+
+
+        <br>
+        <h2>Abstract</h2>
+        <hr>
+        <p>
+            There is a growing interest in deep model-based architectures (<b>DMBAs</b>) for solving imaging inverse problems by combining physical measurement models and learned image priors specified using convolutional neural nets (<b>CNNs</b>). For example, well-known frameworks for designing DMBAs include plug-and-play priors (<b>PnP</b>), deep unfolding (<b>DU</b>), and deep equilibrium models (<b>DEQ</b>). While the empirical performance and theoretical properties of DMBAs have been widely investigated, the existing work has primarily focused on their performance when the desired image prior is known exactly. This work addresses this gap by providing new theoretical and numerical insights into DMBAs under mismatched CNN priors. Mismatched priors arise naturally when there is a distribution shift between training and testing data, for example, due to test images being from a different distribution than images used for training the CNN prior (see Figure 1 above). They also arise when the CNN prior used for inference is an approximation of some desired statistical estimator (MAP or MMSE). Our theoretical analysis provides explicit error bounds on the solution due to the mismatched CNN priors under a set of clearly specified assumptions. Our numerical results compare the empirical performance of DMBAs under realistic distribution shifts and approximate statistical estimators. 
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>Reconstruction using CNN Priors Trained on Mismatched Data</h2>
+        <hr>
+
+        <div class="row align-items-center">
+			<div class="col justify-content-center text-center">
+                <img src="img/v2.gif" style="width:100%" alt="Banner">
+                <p><b>Figure 2:</b> Reconstruction of the same MRI brain image using CNN priors trained on CT, Natural, and MRI images. Note how all the CNN priors improve over the traditional TV prior. The CT prior is the best mismatched prior for this image.</p>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+			<div class="col justify-content-center text-center">
+                <img src="img/subsample_brain.png" style="width:95%" alt="Banner">
+                <p><b>Figure 3:</b> Reconstruction of a brain MRI image for two subsampling rates (10% and 30%) using several priors. MRI (AWGN) refers to a CNN prior trained as an image denoiser for MRI images. MRI (AR), CT (AR), and Natural (AR) refer to CNN priors trained as artifact-removing (AR) operators within implicit DMBAs using deep equilibrium models (DEQ). </p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center">
+			<div class="col justify-content-center text-center">
+                <img src="img/apmri.png" style="width:100%" alt="Banner">
+                <p><b>Figure 4:</b> Parallel MRI reconstruction of a brain MRI image from  the AXT2 dataset using CNN priors trained on MRI images from other datasets and anatomical regions.</p>
+            </div>
+        </div>
+
+ 
+    </div>
+
+    <div class="section">
+        <h2>Reconstruction using CNNs Approximating Proximal Operators </i> </h2>
+        <hr>
+        <div class="row align-items-center">
+			<div class="col justify-content-center text-center">
+                <img src="img/parrot.png" style="width:100%" alt="Banner">
+                <p><b>Figure 5:</b> Reconstruction of <i>Parrot</i> using the exact TV prior and its approximation as a pre-trained CNN. The performance of the approximate TV prior is similar that of the true TV prior.</p>
+            </div>
+        </div>
+
+        <p></p>
+        </div>
+
+
+
+    </div>
+    
+    <div class="section">
+        <h2>Paper</h2>
+        <hr>
+        <div>
+            <div class="list-group">
+                <a href="https://arxiv.org/abs/2107.05533"
+                   class="list-group-item">
+                    <img src="img/paper.jpeg" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+            @article{shoushtari2022mismatch,
+                title={Deep Model-Based Architectures for Inverse Problems under Mismatched Priors},
+                author={Shoushtari, Shirin and Liu, Jiaming and Hu, Yuyang 
+                    and Kamilov, Ulugbek S},
+                journal={arXiv:2207.13200},
+                year={2022}
+              }
+        </div>
+    </div>
+
+    <hr>
+
+   <footer>
+       <p>Acknoledgement: Web template from <a href="https://www.vincentsitzmann.com/siren/">SIREN</a> and <a href="https://www.cse.wustl.edu/~kamilov/projects/2022/decolearn/">DeCoLearn</a></p>
+   </footer>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
